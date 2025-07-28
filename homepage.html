@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Healthcare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a;
+      color: #f1f5f9;
+      scroll-behavior: smooth;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .header {
+      background: #1e293b;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0ef2ff;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-menu a {
+      font-weight: 600;
+      color: #cbd5e1;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: #0ef2ff;
+    }
+
+    .hero {
+      background: url('your-background-image.jpg') no-repeat center center/cover;
+      padding: 8rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #0ef2ff;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #e2e8f0;
+      margin-bottom: 2rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: #0ef2ff;
+      color: #0f172a;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #22d3ee;
+    }
+
+    .services {
+      background: #1e293b;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 2.8rem;
+      color: #0ef2ff;
+      margin-bottom: 3rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: #334155;
+      padding: 2rem;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      color: #0ef2ff;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact {
+      background: #0f172a;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2.5rem;
+      color: #10b981;
+      margin-bottom: 2rem;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #e2e8f0;
+    }
+
+    .back-main {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      background: #22d3ee;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .back-main:hover {
+      background: #0ef2ff;
+    }
+
+    footer {
+      background: #0a0a1a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav-container">
+      <div class="logo">AI HealthCare</div>
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Empowering Health with AI</h1>
+      <p>Revolutionizing treatment through diagnostics, precision surgery, and real-time personalized care powered by AI.</p>
+      <a href="services.html" class="cta-btn">Explore Services</a>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Our AI Healthcare Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="image copy.png" alt="AI Diagnostics">
+        <h3>AI Diagnostics</h3>
+        <p>Analyze medical records & detect diseases at early stages using machine learning and computer vision.</p>
+      </div>
+      <div class="service-card">
+        <img src="image copy 2.png" alt="Remote Surgery">
+        <h3>Remote Surgery</h3>
+        <p>Global specialists perform complex surgeries remotely using robotic systems and AI-guided procedures.</p>
+      </div>
+      <div class="service-card">
+        <img src="image copy 3.png" alt="Genetic Therapy">
+        <h3>Genetic Therapy</h3>
+        <p>Gene editing using CRISPR to treat inherited conditions and optimize patient health at the genetic level.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-phone"></i> <span>+91-2045-TECH</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-globe"></i> <span>AIHealthcare</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i> <span>Bangalore, India</span>
+      </div>
+    </div>
+
+    <a href="hospital.html" class="back-main">⬅ Back to Main Page</a>
+  </section>
+
+  <footer>
+    &copy; AIhealthcare. All rights reserved.
+  </footer>
+</body>
+</html>
