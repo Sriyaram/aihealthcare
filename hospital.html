@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Health Care</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: url('your-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(90deg, #4b6cb7, #182848);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    header .logo img {
+      height: 50px;
+      margin-right: 1rem;
+      transition: transform 0.3s;
+    }
+
+    header .logo img:hover {
+      transform: scale(1.1);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #00c6ff;
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      text-align: center;
+      color: white;
+      padding: 6rem 2rem;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease-in-out;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      background-color: rgba(255, 255, 255, 0.97);
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      background: linear-gradient(90deg, #4b6cb7, #182848);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section h2::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: #4b6cb7;
+      display: block;
+      margin: 0.5rem auto 0;
+    }
+
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .gallery-item {
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      width: 280px;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 0.8rem;
+    }
+
+    .gallery-item p {
+      font-weight: 600;
+      color: #3b82f6;
+    }
+
+    .contact p {
+      text-align: center;
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+      color: #333;
+    }
+
+    footer {
+      background: #1a1a40;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+
+    form input, form button {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .gallery-item {
+        width: 100%;
+      }
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Scroll to Top Button */
+    #scrollBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #4b6cb7;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="image copy 4.png" alt="Logo">
+      <h1>AI Health Care</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="chatbot.html">AI Assist</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <h1>Revolutionizing Healthcare with AI</h1>
+    <p>Real-time diagnosis, smart scanning, and robotic precision.</p>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <p style="max-width: 800px; margin: auto; font-size: 1.1rem; text-align: center;">
+      AI Health Care  platform is  dedicated to enhancing medical services with cutting-edge AI technology. From diagnostics to patient care, we aim to deliver efficiency, accuracy, and round-the-clock support.
+    </p>
+  </section>
+
+  <section class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="image copy 11.png" alt="Telemedicine">
+        <p>AI-based Telemedicine</p>
+      </div>
+      <div class="gallery-item">
+        <img src="image copy 12.png" alt="Surgery">
+        <p>Robotic Surgery Assistance</p>
+      </div>
+      <div class="gallery-item">
+        <img src="image copy 13.png" alt="Predictive Analytics">
+        <p>Predictive Health Analytics</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="team">
+    <h2>Meet Our Experts</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="image copy 16.png" alt="Dr. Smith">
+        <p>Dr. A. Smith - AI Diagnostics Expert</p>
+      </div>
+      <div class="gallery-item">
+        <img src="image copy 17.png" alt="Engineer">
+        <p>Ravi Kumar - Lead AI Engineer</p>
+      </div>
+      <div class="gallery-item">
+        <img src="image copy 18.png" alt="Researcher">
+        <p>Dr. Rahul- Medical Data Scientist</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+    <h2>AI in Action</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="image copy 8.png" alt="Scanning">
+        <p>AI-Powered Scanning Systems</p>
+      </div>
+      <div class="gallery-item">
+        <img src="image copy 9.png" alt="Chat AI">
+        <p>Chatbots for 24/7 Health Support</p>
+      </div>
+      <div class="gallery-item">
+        <img src="image copy 10.png" alt="Monitoring">
+        <p>Live Patient Monitoring Using AI</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <p>"AI Health Care helped me get diagnosed faster and more accurately. Truly life-changing!"</p>
+        <p><strong>- Priya Sharma, Delhi</strong></p>
+      </div>
+      <div class="gallery-item">
+        <p>"The AI chatbot was available when no doctors were. It saved crucial time during an emergency."</p>
+        <p><strong>- Rahul Jain, Bangalore</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="newsletter">
+    <h2>Stay Updated</h2>
+    <p style="text-align:center;">Subscribe to our newsletter for the latest updates on AI in healthcare.</p>
+    <form style="max-width: 500px; margin: auto; display: flex; gap: 1rem;">
+      <input type="email" placeholder="Enter your email" required style="flex:1; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
+      <button type="submit" style="padding: 0.8rem 1.5rem; background-color: #4b6cb7; color: white; border: none; border-radius: 8px; cursor: pointer;">Subscribe</button>
+    </form>
+  </section>
+
+  <section class="section" id="blog">
+    <h2>Latest from Our Blog</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <p><strong>The Future of AI in Healthcare</strong></p>
+        <p>Learn how artificial intelligence is transforming diagnostics, patient monitoring, and medical workflows globally.</p>
+      </div>
+      <div class="gallery-item">
+        <p><strong>Why Patient Data Matters</strong></p>
+        <p>Explore the importance of secure and accurate medical data in building reliable AI health systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>📞 +91-98765-43210</p>
+    <p>📧 support@aihealthcare.com</p>
+    <p>📍 Bangalore, India</p>
+  </section>
+
+  <footer>
+    &copy; 2025 AI Health Care. All rights reserved.
+  </footer>
+
+  <button id="scrollBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+
+</body>
+</html>
