@@ -1,0 +1,141 @@
+<div id="services" class="page">
+  <style>
+    #services {
+      background-color: #1e293b;
+      color: #f1f5f9;
+      padding: 5rem 2rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .services-hero {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .services-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #0ef2ff;
+    }
+
+    .services-hero p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      margin-top: 0.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: #334155;
+      padding: 2rem;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-card h3 {
+      color: #0ef2ff;
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .service-card p {
+      color: #d1d5db;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .service-price {
+      font-weight: bold;
+      color: #10b981;
+      margin-bottom: 1rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #0ef2ff;
+      color: #0f172a;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #22d3ee;
+    }
+
+    @media (max-width: 768px) {
+      .services-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .services-hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="services-hero">
+      <h1>Our Medical Services</h1>
+      <p>Delivering next-generation AI-powered healthcare for every patient</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>AI Diagnostics</h3>
+        <p>Early detection of diseases through machine learning analysis of X-rays, MRIs, and lab results.</p>
+        <div class="service-price">From ₹2,000</div>
+        <a href="contact.html" class="cta-button">Book Now</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Telemedicine</h3>
+        <p>Consult with certified doctors from the comfort of your home through secure video calls.</p>
+        <div class="service-price">From ₹800/session</div>
+        <a href="#contact" class="cta-button">Schedule</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Robotic Surgery</h3>
+        <p>Minimally invasive surgeries using AI-guided robotic systems for precision and faster recovery.</p>
+        <div class="service-price">Custom Quote</div>
+        <a href="#contact" class="cta-button">Consult Surgeon</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Health Monitoring</h3>
+        <p>Real-time vitals tracking using wearable devices synced with our AI care system.</p>
+        <div class="service-price">Plans from ₹1,000/month</div>
+        <a href="#contact" class="cta-button">Enroll Now</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Genetic Therapy</h3>
+        <p>Advanced genetic editing using CRISPR to treat hereditary disorders at the molecular level.</p>
+        <div class="service-price">From ₹15,000</div>
+        <a href="#contact" class="cta-button">Get Evaluation</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Emergency Care</h3>
+        <p>24/7 intelligent triage system ensures immediate response and smart routing to specialists.</p>
+        <div class="service-price">Immediate Assistance</div>
+        <a href="#contact" class="cta-button">Call Now</a>
+      </div>
+    </div>
+  </div>
+</div>

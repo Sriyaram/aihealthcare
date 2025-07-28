@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Saved Messages</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .card small {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Saved Contact Messages</h1>
+  <div id="messages"></div>
+
+  <script>
+    fetch("http://127.0.0.1:5000/messages")
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById("messages");
+        data.messages.forEach(msg => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.innerHTML = `
+            <h3>${msg.name} <small>(${msg.email})</small></h3>
+            <p>${msg.message}</p>
+            <small>Submitted on: ${msg.created_at}</small>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        document.getElementById("messages").innerText = "Error fetching messages.";
+        console.error("Error:", error);
+      });
+  </script>
+</body>
+</html>
